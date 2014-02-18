@@ -1,0 +1,24 @@
+#!/sbin/runscript
+# Copyright 1999-2007 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+# $Header: $
+
+#depend() {
+#
+#}
+
+start() {
+  ebegin "Starting card reader daemon"
+  start-stop-daemon --start --quiet --pidfile ${CRDRDRD_PIDFILE} --exec /mxn/daemon/crdrdrd/crdrdrd -- --daemon -l ${CRDRDRD_LOG_LEVEL} ${SENTINEL_APP_DB} ${CRDRDRD_CARD_PROCESSOR}
+  eend $?
+}
+
+stop() {
+  ebegin "Stopping card reader daemon"
+  start-stop-daemon --stop --quiet --pidfile ${CRDRDRD_PIDFILE} --exec /mxn/daemon/crdrdrd/crdrdrd
+  eend $?
+}
+
+#restart() {
+#
+#}

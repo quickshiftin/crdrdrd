@@ -1,0 +1,9 @@
+CRDRDRD_PIDFILE="/var/run/mxn/crdrdrd.pid"
+SENTINEL_APP_DB="/mxn/db/SENTINEL_APPLICATION.sqlite3"
+
+#will pass in card number as first argument to this program.
+CRDRDRD_CARD_PROCESSOR="/mxn/php/sentinelCodeRoot/cron/runSwipedCardProcessor.php"
+
+#EMERG|ALERT|CRIT|ERROR|WARNING|NOTICE|INFO|DEBUG
+#defaults to DEBUG, so don't forget to specify
+CRDRDRD_LOG_LEVEL="NOTICE"
